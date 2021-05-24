@@ -1,5 +1,4 @@
-#!C:/Python38/python
-print ("Content-type: text/html\n")
+
 
 
 import cgi
