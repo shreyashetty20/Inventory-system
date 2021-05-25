@@ -1,11 +1,10 @@
-#!C:/Python38/python
-print ("Content-type: text/html\n")
+#!/usr/bin/env python
 
-#database
 import mysql.connector
 
-connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user=" sql6414152",password="hnnpBcxV2a",database="sql6414152")
+connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
 cur = connection.cursor()
+
 
 def power(a, b, c):
     x = 1
@@ -56,21 +55,17 @@ print('''
 </nav>
 <style>
 body {font-family: Arial, Helvetica, sans-serif;
-
-
             background-repeat: no-repeat;
             -webkit-background-size: cover;
            
   background-size: cover;}
 * {box-sizing: border-box;
 }
-
 html{ background-image: url(kk.jpg);}
 .topnav {
 font-family: "Times New Roman";
   overflow: hidden;
   background-color: black;
-
 }
 .logo{
 font-family: "Times New Roman";
@@ -91,14 +86,11 @@ font-family: "Times New Roman";
   padding-right: 0.6cm;
   text-decoration: none;
   font-size: 17px;
-
  }
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
@@ -113,7 +105,6 @@ font-family: "Times New Roman";
   background-color: #5F9EA0;
   color: black;
 }
-
 .tp.active {
   background-color: #5F9EA0;
   color: white;
@@ -128,7 +119,6 @@ font-family: "Times New Roman";
   background-color: #5F9EA0;
   color: black;
 }
-
 .to.active {
   background-color: #5F9EA0;
   color: white;
@@ -143,7 +133,6 @@ font-family: "Times New Roman";
   background-color: #5F9EA0;
   color: black;
 }
-
 .tr.active {
   background-color: #5F9EA0;
   color: white;
@@ -169,7 +158,6 @@ body {
             background-image: url(kk.jpg);
             background-repeat: no-repeat;
             -webkit-background-size: cover;
-
             
   background-size: cover;
   
@@ -178,21 +166,17 @@ body {
 }
 </style>
 <body>
-
-
   <center>
 <br><br><br><br><br>
 <table>
   <thead>
     <tr>
+<th>PRODUCT ID</th>
 <th>PRODUCT NAME</th>
-<th>PRODUCT IMAGE</th>
 <th>QUANTITY</th>
 <th>PRICE</th>
-
 </tr>
   </thead>
-
       ''')
 for row in records:
    record1 = cur.fetchone()
@@ -203,7 +187,7 @@ for row in records:
        q = int(record1[2])
             
        x = []
-       x = list(map(int, row[0].split()))  
+       x = list(map(int, row[1].split()))  
 
        dr_msg = decrypt(x, p, key, q)
        dmsg = ''.join(dr_msg)
@@ -212,7 +196,7 @@ for row in records:
        print('''</td>''')
        
        x = []
-       x = list(map(int, row[1].split()))
+       x = list(map(int, row[0].split()))
        print('''<td>''')
        dr_msg = decrypt(x, p, key, q)
        dmsg = ''.join(dr_msg)
