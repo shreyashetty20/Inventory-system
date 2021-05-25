@@ -1,5 +1,11 @@
-#!C:/Python38/python
-print ("Content-type: text/html\n")
+#!/usr/bin/env python
+
+
+
+
+import mysql.connector
+
+connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
 
 print('''
 <!DOCTYPE html>
@@ -10,9 +16,9 @@ print('''
 <nav class="topnav">
  <h2 class="logo">NIDHI's &nbsp INVENTORY &nbsp MANAGEMENT</h2>
   <a href="index.html">logout</a>
- <a href="clientorder.py" class="order">Order</a>
-  <a href="createproduct.py" class="pro">Product</a>
-  <a href="admindisplay.py" class="dash">Dashboard</a>
+ <a href="clientorder.php" class="order">Order</a>
+  <a href="createproduct.php" class="pro">Product</a>
+  <a href="admindisplay.php" class="dash">Dashboard</a>
 
 </nav>
 
@@ -252,11 +258,11 @@ border: none;
   
      <h1 id="messagedisplay">+ADD PRODUCT</h1>
    
-<form method="POST" action="new2.py">
+<form method="POST" action="new2.php">
        <button type="submit"  class="btn1">DISPLAY AVAILABLE PRODUCTS</button>
        
      </form>
-<form method="POST" action="createproduct.py" class="form-container" enctype="multipart/form-data">
+<form method="POST" action="createproduct.php" class="form-container" enctype="multipart/form-data">
   <div class="container">
    
     <hr>
@@ -305,7 +311,7 @@ price=str(form.getvalue("price"))
 import mysql.connector
 
 #connection = pymysql.connect(host="localhost",user="root",password="",database="inventory" )
-connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user=" sql6414152",password="hnnpBcxV2a",database="sql6414152")
+connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
 cur = connection.cursor()
 
 
