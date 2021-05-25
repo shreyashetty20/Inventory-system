@@ -1,6 +1,4 @@
-#!C:/Python38/python
-print("Content-type: text/html\n")
-
+#!/usr/bin/env python
 
 
 import cgi
@@ -16,8 +14,7 @@ phone=str(form.getvalue("phone"))
 
 import mysql.connector
 
-#connection = pymysql.connect(host="localhost",user="root",password="",database="inventory" )
-connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user=" sql6414152",password="hnnpBcxV2a",database="sql6414152")
+connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
 cur = connection.cursor()
 
 
@@ -140,9 +137,8 @@ print('''
 <nav class="topnav">
   <h2 class="logo">NIDHI's &nbsp INVENTORY &nbsp MANAGEMENT</h2>
   <a href="index.html">logout</a>
- <a href="index.html">logout</a>
-  <a href="order.py" class="order">Order</a>
-  <a href="new.py" class="pro">Product</a>
+  <a href="order.php" class="order">Order</a>
+  <a href="new.php" class="pro">Product</a>
   <a href="dashboard.html" class="dash">Dashboard</a>
  
  
@@ -153,7 +149,6 @@ print('''
   .topnav {
   overflow: hidden;
   background-color: black;
-
 }
 .logo{
   float: left;
@@ -173,7 +168,6 @@ print('''
   padding-right: 0.6cm;
   text-decoration: none;
   font-size: 17px;
-
  }
  body {font-family: Arial, Helvetica, sans-serif;
              background-repeat: no-repeat;
@@ -181,15 +175,12 @@ print('''
             background-size: cover;
           }
 * {box-sizing: border-box;
-
 }
 html{ background-image: url(kk.jpg);}
-
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
@@ -204,7 +195,6 @@ html{ background-image: url(kk.jpg);}
   background-color: #5F9EA0;
   color: black;
 }
-
 .tp.active {
   background-color: #5F9EA0;
   color: white;
@@ -226,14 +216,11 @@ html{ background-image: url(kk.jpg);}
 <div class="content">
   <!-- notification message -->
   
-
     <!-- logged in user information -->
     
     <p><strong><h2><center>''' +"  "+name.upper()+'''</center></h2> </strong>
    
 </div>
-
 </body>
 </html>
-
       ''')
