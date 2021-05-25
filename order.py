@@ -1,4 +1,4 @@
-[10:11, 5/25/2021] Shivani: #!/usr/bin/env python
+#!/usr/bin/env python
 
 import mysql.connector
 
