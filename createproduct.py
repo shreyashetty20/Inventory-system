@@ -266,11 +266,12 @@ border: none;
   <div class="container">
    
     <hr>
-
+    <label for="image"><b>Product Id</b></label><br><br>
+    <input type="number" placeholder="Enter product id" name="image" required>
+    
     <label for="Pro_name"><b>Product name</b></label>
     <input type="text" placeholder="Enter name" name="product_name" id="product_name" required>
-    <label for="image"><b>Product Image</b></label><br><br>
-    <input type="file" placeholder="Enter product name" name="image" required>
+    
     <label for="quantity"><b>Quantity</b></label>
     <input type="number" placeholder="Enter quantity" name="quantity" id="quantity" required>
 
@@ -302,7 +303,7 @@ form=cgi.FieldStorage()
 
 
 product_name=form.getvalue("product_name")
-#image=str(form.getvalue("image"))
+id1=str(form.getvalue("image"))
 quantity=str(form.getvalue("quantity" ))
 price=str(form.getvalue("price"))
 
@@ -311,7 +312,7 @@ price=str(form.getvalue("price"))
 import mysql.connector
 
 #connection = pymysql.connect(host="localhost",user="root",password="",database="inventory" )
-connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
+connection = mysql.connector.connect(host='localhost',user='root',password='',database='inventory')
 cur = connection.cursor()
 
 
@@ -381,7 +382,7 @@ def decrypt(en_msg, p, key, q):
 def encryption():
     
     msg1 = product_name
-    msg2 = "IMAGE"
+    msg2 = id1
     msg3 = quantity
     msg4= price
     
