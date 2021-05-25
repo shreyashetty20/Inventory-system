@@ -48,9 +48,9 @@ print('''
 <nav class="topnav">
   <h2 class="logo">NIDHI's &nbsp INVENTORY &nbsp MANAGEMENT</h2>
   <a href="index.html">logout</a>
-  <a href="clientorder.php" class="order">Order</a>
-  <a href="createproduct.php" class="pro">Product</a>
-  <a href="admindisplay.php" class="dash">Dashboard</a>
+  <a href="clientorder.py" class="order">Order</a>
+  <a href="createproduct.py" class="pro">Product</a>
+  <a href="admindisplay.py" class="dash">Dashboard</a>
  
  
  
@@ -181,16 +181,16 @@ body {
 <body>
   <center>
 
- <form method="POST" action=" createproduct.php">
+ <form method="POST" action=" createproduct.py">
        <button type="submit"  class="btn1">Close</button>
      </form>
  <form method="POST" action="" enctype="multipart/form-data">
-
+<br><br><br><br>
 <table>
   <thead>
     <tr>
+<th>PRODUCT ID</th>
 <th>PRODUCT NAME</th>
-<th>PRODUCT IMAGE</th>
 <th>QUANTITY</th>
 <th>PRICE</th>
 
@@ -207,7 +207,7 @@ for row in records:
        q = int(record1[2])
             
        x = []
-       x = list(map(int, row[0].split()))  
+       x = list(map(int, row[1].split()))  
 
        dr_msg = decrypt(x, p, key, q)
        dmsg = ''.join(dr_msg)
@@ -216,7 +216,7 @@ for row in records:
        print('''</td>''')
        
        x = []
-       x = list(map(int, row[1].split()))
+       x = list(map(int, row[0].split()))
        print('''<td>''')
        dr_msg = decrypt(x, p, key, q)
        dmsg = ''.join(dr_msg)
