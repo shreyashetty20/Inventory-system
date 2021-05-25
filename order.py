@@ -1,10 +1,8 @@
-#!C:/Python38/python
-print ("Content-type: text/html\n")
-
+[10:11, 5/25/2021] Shivani: #!/usr/bin/env python
 
 import mysql.connector
 
-connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user=" sql6414152",password="hnnpBcxV2a",database="sql6414152")
+connection = mysql.connector.connect(host="sql6.freesqldatabase.com",user="sql6414152",password="hnnpBcxV2a",database="sql6414152",port=3306)
 cur = connection.cursor()
 
 def power(a, b, c):
@@ -63,16 +61,13 @@ print('''
 <html>
   <head>
    
-
 <title>PLACING ORDER</title>
-
 <nav class="topnav">
  <h2 class="logo">NIDHI's INVENTORY  MANAGEMENT</h2>
  <a href="index.html">logout</a>
  <a href="orderplace.html" class="order">Order</a>
  <a href="new.py" class="pro">Product</a>
  <a href="dashboard.html" class="dash">Dashboard</a>
-
 </nav>
 </head>
 <style>
@@ -99,13 +94,11 @@ print('''
 .topnav {
   overflow: hidden;
   background-color: black;
-
 }
 h2{
   font-size: 0.7cm;
   margin-left:0.3cm;
 }
-
 .cancel {
   background-color: red;
   color: white;
@@ -154,9 +147,7 @@ h1{
   padding-bottom: 0.4cm;
   text-decoration: none;
   font-size: 17px;
-
  }
-
 .input label{
 margin: 10px 10px 10px 0px;
 }
@@ -172,13 +163,11 @@ padding: 5px 10px;
 font-size: 16px;
 border-radius: 5px;
 border: 1px solid grey;
-
 }
 .topnav a:hover {
   background-color: #ddd;
   color: black;
 }
-
 .topnav a.active {
   background-color: #4CAF50;
   color: white;
@@ -193,7 +182,6 @@ border: 1px solid grey;
   background-color: #5F9EA0;
   color: black;
 }
-
 .tp.active {
   background-color: #5F9EA0;
   color: white;
@@ -209,32 +197,19 @@ border: 1px solid grey;
   color: black;
 }
 table
-
 {
-
 border-style:solid;
-
 border-width:2px;
 margin-left: 1.5cm;
-
-
 border-color:pink;
-
 }
 table
-
 {
-
 border-style:solid;
-
 border-width:2px;
 margin-left: 1.5cm;
-
-
 border-color:pink;
-
 }
-
 .to.active {
   background-color: #5F9EA0;
   color: white;
@@ -249,7 +224,6 @@ border-color:pink;
   background-color: #5F9EA0;
   color: black;
 }
-
 .tr.active {
   background-color: #5F9EA0;
   color: white;
@@ -280,7 +254,6 @@ padding: 10px;
   box-shadow: 1px 1px 2px #bbbbbb;
   cursor: pointer;
  margin: 0;
-
  
 }
 form{
@@ -293,7 +266,6 @@ form{
     padding: 10px;
    
 width:30%;
-
 }
 .enter label,
 .enter input {
@@ -302,7 +274,6 @@ width:30%;
     padding: 10px;
    
 width:30%;
-
 }
 .entr label,
 .entr input {
@@ -311,7 +282,6 @@ width:30%;
     padding: 10px;
    
 width:30%;
-
 }
 .gt label,
 .gt input {
@@ -320,7 +290,6 @@ width:30%;
     padding: 20px;
    
 width:30%;
-
 }
 h1{
   text-align: center;
@@ -333,25 +302,19 @@ h1{
 label{
   font-size: 0.5cm;
 }
-
   </style>
 <body>
 <h1>Placing order</h1>
 <br><br>
 <h2>Adding client detail</h2>
-
-
 </header>
 <article>
-<form action="orderplace.py" method="post">
-
+<form action="orderplace.php" method="post">
 <table class="meta">
  
-
 <div class="input-group">
 <label>Client name</label>
 <input type="text" name="clientname" value="''' +cname + '''">
-
 </div>
 <div class="input-group">
 <label>Client contact</label>
@@ -365,21 +328,17 @@ label{
   <label>Product name</label>
   <input type="text" name="pname">
   </div>
-
   <div class="input-group">
     <label>Product quantity</label>
     <input type="number" name="pquantity">
     </div>
-
     <div class="input-group">
       <label>Product price</label>
       <input type="number" name="pprice">
       </div>
-
 <br><br>
 <button type="submit" class="btn" name="Save" >Place order</button>
 </form>
 </body>
 </html>
 ''')
-
